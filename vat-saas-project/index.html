@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VATMaster OSS | Simple VAT Auto-Calculator for EU Freelancers</title>
+    <meta name="description" content="Calculate, manage, and automate your EU VAT compliance under the One Stop Shop (OSS) scheme. Built specifically for modern digital freelancers.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5', // Indigo
+                        secondary: '#0F172A', // Slate 900
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-primary">VATMaster<span class="text-secondary">OSS</span></a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-secondary font-medium">
+                <a href="index.html" class="hover:text-primary">Home</a>
+                <a href="about.html" class="hover:text-primary">About</a>
+                <a href="services.html" class="hover:text-primary">Services</a>
+                <a href="contact.html" class="hover:text-primary">Contact</a>
+            </div>
+
+            <a href="calculator.html" class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-secondary transition md:block hidden">
+                Try Calculator
+            </a>
+
+            <button class="md:hidden text-secondary focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+        
+        <section id="hero" class="bg-slate-50 py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-secondary leading-tight mb-6">
+                    Master Your EU VAT <span class="text-primary">Compliance</span> Instantly
+                </h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+                    The simplest OSS (One Stop Shop) VAT auto-calculator designed specifically for freelancers selling digital services across Europe. Accurate rates, zero stress.
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <a href="calculator.html" class="bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-secondary transition">
+                        Start Calculating (Free)
+                    </a>
+                    <a href="services.html" class="bg-white text-secondary px-8 py-3 rounded-lg text-lg font-semibold border border-slate-300 hover:border-primary transition">
+                        Learn About OSS
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-100">
+                        <div class="bg-primary/10 text-primary w-12 h-12 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Automatic OSS Rates</h3>
+                        <p class="text-slate-600">We keep track of the latest VAT rates for all EU member states, so you don't have to.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-100">
+                        <div class="bg-primary/10 text-primary w-12 h-12 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Instant Calculations</h3>
+                        <p class="text-slate-600">Enter your amount, select the country, and get your VAT amount and total instantly.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-100">
+                        <div class="bg-primary/10 text-primary w-12 h-12 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Freelancer Focused</h3>
+                        <p class="text-slate-600">Designed to be minimalist and easy to use, focusing purely on your immediate calculation needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-secondary text-slate-300 py-16 mt-10">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-white mb-4 block">VATMaster<span class="text-primary">OSS</span></a>
+                <p>Simplifying EU VAT compliance for the modern digital economy.</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                <a href="index.html" class="block hover:text-primary">Home</a>
+                <a href="about.html" class="block hover:text-primary">About Us</a>
+                <a href="calculator.html" class="block hover:text-primary">VAT Calculator</a>
+            </div>
+            <div class="space-y-3">
+                <h4 class="font-semibold text-white mb-4">Resources</h4>
+                <a href="#" class="block hover:text-primary">OSS Guide</a>
+                <a href="services.html" class="block hover:text-primary">Services</a>
+                <a href="contact.html" class="block hover:text-primary">Support</a>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Contact</h4>
+                <p>support@vatmasteross.io</p>
+                <p>+1 (555) 123-VAT</p>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-slate-700 text-center text-slate-500">
+            © 2024 VATMaster OSS. All rights reserved. A static SaaS concept.
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

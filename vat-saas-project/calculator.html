@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free OSS VAT Calculator | EU Digital Services | VATMaster OSS</title>
+    <meta name="description" content="Calculate your EU OSS VAT instantly. Select country, enter amount, and get accurate VAT and total amounts.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50">
+
+    <main class="pt-24 container mx-auto px-6 py-16">
+        
+        <div class="max-w-xl mx-auto bg-white p-10 rounded-3xl shadow-2xl shadow-slate-100 border border-slate-100">
+            <h1 class="text-3xl font-extrabold text-secondary mb-2 text-center">VAT <span class="text-primary">Auto-Calculator</span></h1>
+            <p class="text-slate-600 mb-10 text-center">Enter your details below to calculate the required VAT.</p>
+
+            <div id="calculator-form" class="space-y-6">
+                
+                <div>
+                    <label for="baseAmount" class="block text-sm font-medium text-secondary mb-2">Amount (€) (Excluding VAT)</label>
+                    <input type="number" id="baseAmount" placeholder="100.00" class="w-full px-5 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition">
+                </div>
+
+                <div>
+                    <label for="countrySelect" class="block text-sm font-medium text-secondary mb-2">Customer's EU Country (OSS Rate)</label>
+                    <select id="countrySelect" class="w-full px-5 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary bg-white transition">
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="0.20">Austria (20%)</option>
+                        <option value="0.21">Belgium (21%)</option>
+                        <option value="0.25">Croatia (25%)</option>
+                        <option value="0.24">Finland (24%)</option>
+                        <option value="0.20">France (20%)</option>
+                        <option value="0.19">Germany (19%)</option>
+                        <option value="0.22">Italy (22%)</option>
+                        <option value="0.23">Ireland (23%)</option>
+                        <option value="0.21">Netherlands (21%)</option>
+                        <option value="0.21">Spain (21%)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="vatRate" class="block text-sm font-medium text-secondary mb-2">VAT Rate (%)</label>
+                    <input type="number" id="vatRate" placeholder="e.g., 20" class="w-full px-5 py-3 border border-slate-300 rounded-xl bg-slate-100 text-slate-500 cursor-not-allowed transition" readonly>
+                </div>
+
+                <button id="calculateBtn" class="w-full bg-primary text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-secondary transition flex items-center justify-center gap-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    Calculate Final Price
+                </button>
+            </div>
+
+            <div id="resultsArea" class="mt-12 p-8 bg-slate-50 rounded-2xl border border-slate-100 hidden transform transition-all duration-500 scale-95 opacity-0">
+                <h3 class="text-xl font-bold text-secondary mb-6 border-b pb-4 border-slate-200">Calculation Results</h3>
+                
+                <div class="space-y-4 text-slate-700">
+                    <div class="flex justify-between items-center">
+                        <span>Base Amount:</span>
+                        <span class="font-semibold text-secondary" id="resultBaseAmount">€0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span id="resultVatLabel">VAT (0%):</span>
+                        <span class="font-semibold text-secondary" id="resultVatAmount">€0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-primary/5 p-4 rounded-lg mt-4">
+                        <span class="text-lg font-bold text-primary">Total Price (Inc. VAT):</span>
+                        <span class="text-2xl font-extrabold text-primary" id="resultTotalAmount">€0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
